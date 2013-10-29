@@ -1,0 +1,35 @@
+# require "codebreaker/version"
+
+module Codebreaker
+  class Game
+
+  	def initialize(output)
+  		@output = output
+  	end
+
+  	def start
+  		@output.puts 'Welcome to Codebreaker!'
+  		createNumber
+  		@output.puts 'Enter guess:'
+  	end
+
+  	def createNumber
+  		@numbers = []
+  	
+	  	4.times do 
+	  		@numbers << rand(7).to_i
+	  	end
+  	end
+
+    def inNumbers?(digit)
+      @numbers.include? digit
+    end
+
+    def testInitNumbers(nums)
+      @numbers = nums
+    end
+    def testGetNumbers
+      @numbers
+    end
+  end
+end
